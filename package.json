@@ -1,0 +1,16 @@
+{
+  "name": "wordscramble",
+  "version": "1.0.0",
+  "description": "A game where you can challenge your word building skills!",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James Scoon",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.3",
+    "socket.io": "^2.0.4"
+  }
+}
