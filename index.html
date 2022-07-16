@@ -1,0 +1,64 @@
+﻿<!doctype html>
+<http>
+	<head>
+		<link rel="stylesheet" href="client/index.css">
+		<link href="https://fonts.googleapis.com/css?family=Raleway:700|Quicksand:500" rel="stylesheet">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.5/vue.min.js"></script>
+		<title>Word Scramble</title>
+	</head>
+	<body>
+		<div id="header">
+			<h1>Word Scramble</h1>
+		</div>
+		<div id="wrapper">
+			  <div id="app">
+				  <div v-if="menu" id="menu">
+					  <h2>Welcome to WordScramble, a game made to test your memory of english words.</h2><br>
+					  <p>You are given a set of eight letters and sixty seconds to make as many words as possible using only those letters. Can you find all of the possible words within the time constraint? Can you make a word using all eight letters?</p><br>
+					  <p>Each word you type can have a different score depending on its length; the longer the word, the more it contributes to your final percentage.</p><br>
+					  <p class="red">😐 3 letters: 1 point</p>
+					  <p class="orange">🙂 4 letters: 3 points</p>
+					  <p class="green">😃 5 letters: 4 points</p>
+					  <p class="lightblue">😀 6 letters: 6 points</p>
+					  <p class="blue">😁 7 letters: 8 points</p>
+					  <span class="rotating">😂</span><p class="epic">&nbsp; &nbsp; &nbsp; 8 letters: 16 points</p><br>
+					  <p>Made by Jamesscn</p><br>
+					  <button @click="start">Begin</button>
+				  </div>
+				  <div v-else>
+					  <div class="percentage" :class="[{ epic: percent >= 75, blue: percent < 75 && percent >= 60, lightblue: percent < 60 && percent >= 45, green: percent < 45 && percent >= 30, orange: percent < 30 && percent >= 15, red: percent < 15}]">
+						<h2>{{ percent }}%</h2>
+					  </div>
+					  <div id="game">
+					    <transition-group name="tile-list" tag="div" class="letterContainer">
+						  <span v-for="letterIndex in letters[0].length" :key="'A-' + letterIndex" class="letter">{{ letters[0][letterIndex - 1] }}</span>
+					    </transition-group>
+						<transition-group name="tile-list" tag="div" class="letterContainer">
+							<span v-for="letterIndex in letters[1].length" :key="'B-' + letterIndex" class="letter">{{ letters[1][letterIndex - 1] }}</span>
+						</transition-group>
+					  </div>
+					  <transition-group name="word-list" class="word-list" tag="ul">
+					    <li v-for="word in usedWords" :key="'C-' + word" :class="[{ epic: word.length == 8, blue: word.length == 7, lightblue: word.length == 6, green: word.length == 5, orange: word.length == 4, red: word.length == 3}]">{{ word }}</li>
+					  </transition-group><br>
+					  <transition v-if="!inGame" name="end">
+						<div>
+						  <ul class="word-list">
+							<li v-for="word in notFound" :key="'D-' + word" :class="[{ epic: word.length == 8, blue: word.length == 7, lightblue: word.length == 6, green: word.length == 5, orange: word.length == 4, red: word.length == 3}]">{{ word }}</li>
+						  </ul>
+						  <br>
+						  <p v-if="notFound.length == 0">Congratulations! You have found all the words. You scored {{ score }} points.</p>
+						  <p v-else>Times up! You scored {{ score }} points.</p>
+							<button @click="start">Play Again</button>
+						</div>
+					  </transition>
+					  <transition v-else name="end">
+						<div>
+							<p id="score">Time remaining: {{ seconds }}s | Score: {{ score }}</p><br>
+						</div>
+					  </transition> 
+				  </div>
+			  </div>
+		</div>
+		<script src="client/index.js"></script>
+	</body>
+</http>

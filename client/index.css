@@ -1,0 +1,318 @@
+body, div, span, h1, h2, h3, p, a, input, button, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, li {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p, a, input, button {
+    font-family: Quicksand, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+p {
+    padding-bottom: 4px;
+}
+
+button {
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    background: radial-gradient(rgb(128, 128, 128), rgb(36, 36, 36));
+}
+
+input {
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#wrapper {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#header {
+    padding: 16px;
+    box-shadow: 0px 0px 5px rgb(150, 150, 150);
+    background-color: rgb(6, 157, 18);
+    color: white;
+    text-align: center
+}
+
+#app {
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px rgb(200, 200, 200);
+    background-color: rgb(250, 250, 250);
+}
+
+#game {
+    display: block;
+    justify-content: center;
+}
+
+#score {
+    text-align: right;
+}
+
+#menu {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.word-list {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 20px;
+}
+
+.word-list {
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.word-list li {
+    min-width: 7em;
+}
+
+.word-list-enter-active {
+    transition: all 0.2s;
+}
+
+.word-list-enter {
+    opacity: 0;
+    transform: scale(0) translateY(-30px);
+}
+
+.letterContainer {
+    display: flex;
+    justify-content: center;
+    height: 80px;
+}
+
+.letter {
+    display: inline-flex;
+    justify-content: center;
+    margin: 5px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px black;
+    background-color: rgb(25, 221, 40);
+    background-image: url("letter_overlay.png");
+    color: white;
+    text-align: center;
+    text-anchor: middle;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.tile-list-move {
+    transition: transform 0.3s;
+}
+
+.end-enter-active {
+    transition: all 0.5s;
+}
+
+.end-leave-active {
+    transition: all 0.5s;
+}
+
+.end-enter {
+    opacity: 0;
+    transform: scale(3);
+}
+
+.end-leave-to {
+    opacity: 0;
+}
+
+.red {
+    color: rgb(255, 0, 0);
+}
+
+.orange {
+    color: rgb(255, 106, 0);
+}
+
+.green {
+    color: rgb(6, 157, 18);
+}
+
+.lightblue {
+    color: rgb(0, 145, 200);
+}
+
+.blue {
+    color: rgb(20, 0, 198);
+}
+
+.epic {
+    -webkit-animation: purpleGlow 2s infinite;
+    -moz-animation: purpleGlow 2s infinite;
+    -o-animation: purpleGlow 2s infinite;
+    animation: purpleGlow 2s infinite;
+}
+
+.rotating {
+    position: absolute;
+    -webkit-animation: rotate 2s infinite linear;
+    -moz-animation: rotate 2s infinite linear;
+    -o-animation: rotate 2s infinite linear;
+    animation: rotate 2s infinite linear;
+}
+
+@-webkit-keyframes purpleGlow {
+    0% {
+        color: purple;
+    }
+    50% {
+        color: rgb(255, 0, 255);
+    }
+    100% {
+        color: purple;
+    }
+}
+
+@-moz-keyframes purpleGlow {
+    0% {
+        color: purple;
+    }
+
+    50% {
+        color: rgb(255, 0, 255);
+    }
+
+    100% {
+        color: purple;
+    }
+}
+
+@-o-keyframes purpleGlow {
+    0% {
+        color: purple;
+    }
+
+    50% {
+        color: rgb(255, 0, 255);
+    }
+
+    100% {
+        color: purple;
+    }
+}
+
+@keyframes purpleGlow {
+    0% {
+        color: purple;
+    }
+
+    50% {
+        color: rgb(255, 0, 255);
+    }
+
+    100% {
+        color: purple;
+    }
+}
+
+@-webkit-keyframes purpleGlow {
+    0% {
+        color: purple;
+    }
+    50% {
+        color: rgb(255, 0, 255);
+    }
+    100% {
+        color: purple;
+    }
+}
+
+@-moz-keyframes purpleGlow {
+    0% {
+        color: purple;
+    }
+
+    50% {
+        color: rgb(255, 0, 255);
+    }
+
+    100% {
+        color: purple;
+    }
+}
+
+@-o-keyframes purpleGlow {
+    0% {
+        color: purple;
+    }
+
+    50% {
+        color: rgb(255, 0, 255);
+    }
+
+    100% {
+        color: purple;
+    }
+}
+
+@keyframes purpleGlow {
+    0% {
+        color: purple;
+    }
+
+    50% {
+        color: rgb(255, 0, 255);
+    }
+
+    100% {
+        color: purple;
+    }
+}
+
+@-webkit-keyframes rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes rotate {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes rotate {
+    100% {
+        -o-transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
